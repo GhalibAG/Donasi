@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hubungi Kami</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/contact-style.css" />
+    <style>
+      /* Style untuk notifikasi */
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        max-width: 400px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        animation: slideIn 0.5s ease-out;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .notification.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .notification.success {
+        background-color: #e7f7ee;
+        border-left: 5px solid #28a745;
+      }
+
+      .notification.error {
+        background-color: #ffebee;
+        border-left: 5px solid #dc3545;
+      }
+
+      .notification .icon {
+        margin-right: 15px;
+        font-size: 24px;
+      }
+
+      .notification.success .icon {
+        color: #28a745;
+      }
+
+      .notification.error .icon {
+        color: #dc3545;
+      }
+
+      .notification .content {
+        flex: 1;
+      }
+
+      .notification h3 {
+        margin: 0 0 5px 0;
+        font-size: 18px;
+      }
+
+      .notification p {
+        margin: 0;
+        color: #555;
+      }
+
+      .notification .close-btn {
+        background: none;
+        border: none;
+        color: #999;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 10px;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideOut {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+
+      /* Loading spinner */
+      .spinner-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+
+      .spinner-overlay.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid var(--palestine-green);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <span style="color: white">Donasi</span>
+          <span style="color: var(--palestine-green)">Ber</span>
+          <span style="color: var(--palestine-red)">sa</span>
+          <span style="color: var(--palestine-black)">ma</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+            alt="Bendera Palestina"
+            class="flag-icon"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Tentang</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Kontak</a>
+            </li>
+            <!-- Menu Dropdown Button -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More Options
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="about.html">Tentang Kami</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="article.html">Artikel</a>
+                </li>
+                <li><a class="dropdown-item" href="donasi.html">donasi</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="sign.html" class="btn btn-donasi">Sign-Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-container">
+      <div class="container py-5 mt-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="contact-card fade-in">
+              <div class="card-body">
+                <h2 class="text-center mb-4">Hubungi Kami</h2>
+                <p class="text-center text-muted mb-4">
+                  Silakan isi formulir berikut untuk mengirim pesan kepada kami
+                </p>
+
+                <div class="features-section">
+                  <div class="feature-badge">
+                    <i class="fas fa-headset"></i>
+                    <p>Dukungan 24/7</p>
+                  </div>
+                  <div class="feature-badge">
+                    <i class="fas fa-reply-all"></i>
+                    <p>Respons Cepat</p>
+                  </div>
+                  <div class="feature-badge">
+                    <i class="fas fa-user-shield"></i>
+                    <p>Keamanan Data</p>
+                  </div>
+                </div>
+
+                <form id="contactForm">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Nama Lengkap</label>
+                    <div class="input-group">
+                      <span class="input-group-text"
+                        ><i class="fas fa-user"></i
+                      ></span>
+                      <input
+                        type="text"
+                        class="form-control with-icon"
+                        id="name"
+                        name="name"
+                        placeholder="Masukkan nama lengkap Anda"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group">
+                      <span class="input-group-text"
+                        ><i class="fas fa-envelope"></i
+                      ></span>
+                      <input
+                        type="email"
+                        class="form-control with-icon"
+                        id="email"
+                        name="email"
+                        placeholder="email@contoh.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <label for="message" class="form-label">Pesan</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      name="message"
+                      rows="5"
+                      placeholder="Tuliskan pesan Anda di sini..."
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-submit">
+                      <i class="fas fa-paper-plane me-2"></i>Kirim Pesan
+                    </button>
+                  </div>
+                </form>
+
+                <div class="contact-info mt-4">
+                  <div class="row">
+                    <div class="col-md-4 text-center">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <p>Jakarta, Indonesia</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                      <i class="fas fa-phone"></i>
+                      <p>+62 123 456 789</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                      <i class="fas fa-envelope"></i>
+                      <p>info@contoh.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notifikasi -->
+    <div id="notification" class="notification">
+      <div class="icon"><i class="fas fa-check-circle"></i></div>
+      <div class="content">
+        <h3 id="notification-title">Berhasil!</h3>
+        <p id="notification-message">Pesan telah dikirim.</p>
+      </div>
+      <button onclick="closeNotification()" class="close-btn">&times;</button>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="spinner-overlay" class="spinner-overlay">
+      <div class="spinner"></div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-title">Tentang Donasi Bersama</h4>
+            <p>
+              Platform donasi transparan yang berfokus pada bantuan kemanusiaan
+              untuk Palestina. Kami bekerja sama dengan organisasi terpercaya
+              untuk memastikan donasi Anda sampai ke tangan yang membutuhkan.
+            </p>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.instagram.com/ghalib.ag/"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-title">Tautan Cepat</h4>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="bi bi-chevron-right"></i> Beranda</a
+                >
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="bi bi-chevron-right"></i> Tentang Kami</a
+                >
+              </li>
+
+              <li>
+                <a href="donasi.html"
+                  ><i class="bi bi-chevron-right"></i> Donasi</a
+                >
+              </li>
+              <li>
+                <a href="article.html"
+                  ><i class="bi bi-chevron-right"></i> Artikel</a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="bi bi-chevron-right"></i> Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h4 class="footer-title">Hubungi Kami</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="bi bi-geo-alt me-2"></i> Jl. Merdeka No. 123, Jakarta
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-telephone me-2"></i> +62 123 4567 890
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope me-2"></i> info@donasibersama.id
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contactForm");
+        const notification = document.getElementById("notification");
+        const notificationTitle = document.getElementById("notification-title");
+        const notificationMessage = document.getElementById(
+          "notification-message"
+        );
+        const spinnerOverlay = document.getElementById("spinner-overlay");
+
+        // Fungsi untuk menampilkan notifikasi
+        function showNotification(type, title, message) {
+          // Set tipe notifikasi (success/error)
+          notification.className = "notification " + type;
+
+          // Ubah ikon sesuai tipe
+          const iconElement = notification.querySelector(".icon i");
+          if (type === "success") {
+            iconElement.className = "fas fa-check-circle";
+          } else {
+            iconElement.className = "fas fa-exclamation-circle";
+          }
+
+          // Set judul dan pesan
+          notificationTitle.textContent = title;
+          notificationMessage.textContent = message;
+
+          // Tampilkan notifikasi
+          notification.classList.add("show");
+
+          // Hilangkan notifikasi setelah 5 detik
+          setTimeout(function () {
+            notification.style.animation = "slideOut 0.5s forwards";
+            setTimeout(function () {
+              notification.classList.remove("show");
+              notification.style.animation = "";
+            }, 500);
+          }, 5000);
+        }
+
+        // Fungsi untuk menutup notifikasi
+        window.closeNotification = function () {
+          notification.style.animation = "slideOut 0.5s forwards";
+          setTimeout(function () {
+            notification.classList.remove("show");
+            notification.style.animation = "";
+          }, 500);
+        };
+
+        // Event listener untuk form submission
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Tampilkan loading spinner
+          spinnerOverlay.classList.add("show");
+
+          // Buat FormData dari form
+          const formData = new FormData(contactForm);
+
+          // Kirim data form menggunakan fetch API
+          fetch("contact.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Sembunyikan loading spinner
+              spinnerOverlay.classList.remove("show");
+
+              if (data.status === "success") {
+                showNotification("success", "Berhasil!", data.message);
+                contactForm.reset();
+              } else {
+                showNotification("error", "Gagal!", data.message);
+              }
+            })
+            .catch((error) => {
+              spinnerOverlay.classList.remove("show");
+
+              showNotification(
+                "error",
+                "Error!",
+                "Terjadi kesalahan. Silakan coba lagi."
+              );
+              console.error("Error:", error);
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

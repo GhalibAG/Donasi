@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tentang Donasi Bersama - Platform Donasi Terpercaya untuk Palestina"
+    />
+
+    <title>Tentang Kami - Donasi Bersama</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <style>
+      :root {
+        --palestine-red: #ef3340;
+        --palestine-green: #009639;
+        --palestine-black: #000000;
+        --palestine-white: #ffffff;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Navbar styling */
+      .navbar {
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .navbar.scrolled {
+        background-color: rgba(0, 0, 0, 0.9) !important;
+        padding: 0.5rem 0;
+      }
+
+      .btn-donasi {
+        background-color: var(--palestine-green);
+        color: white;
+        font-weight: 600;
+        padding: 0.5rem 1.5rem;
+        border-radius: 30px;
+        border: 2px solid var(--palestine-green);
+        transition: all 0.3s ease;
+      }
+
+      .btn-donasi:hover {
+        background-color: transparent;
+        color: var(--palestine-green);
+      }
+
+      .nav-link {
+        color: white !important;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--palestine-green);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .flag-icon {
+        height: 1.5rem;
+        margin-left: 0.5rem;
+        margin-bottom: 0.2rem;
+      }
+
+      /* Page header */
+      .page-header {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("/api/placeholder/1200/400") center/cover no-repeat;
+        padding: 8rem 0 4rem;
+        color: white;
+      }
+
+      .page-title {
+        position: relative;
+        display: inline-block;
+      }
+
+      .page-title::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background-color: var(--palestine-green);
+        bottom: -10px;
+        left: 25%;
+      }
+
+      /* About section styling */
+      .about-section {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 2rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background-color: var(--palestine-green);
+        bottom: -10px;
+        left: 0;
+      }
+
+      .palestina-text {
+        color: var(--palestine-green);
+      }
+
+      .about-paragraph {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .about-img {
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .value-card {
+        height: 100%;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .value-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--palestine-green);
+      }
+
+      .team-member {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .team-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        border: 5px solid #f8f9fa;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background-color: #f8f9fa;
+        border-radius: 50%;
+        color: #333;
+        margin: 0 0.3rem;
+        transition: all 0.3s ease;
+      }
+
+      .team-social a:hover {
+        background-color: var(--palestine-green);
+        color: white;
+      }
+
+      .milestone-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--palestine-green);
+      }
+
+      .timeline {
+        position: relative;
+        padding: 0;
+        list-style: none;
+      }
+
+      .timeline:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        margin-left: -1px;
+        background-color: #e9ecef;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+        width: 100%;
+      }
+
+      .timeline-panel {
+        position: relative;
+        float: left;
+        width: 46%;
+        padding: 2rem;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .timeline-inverted .timeline-panel {
+        float: right;
+      }
+
+      .timeline-image {
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        margin-left: -40px;
+        text-align: center;
+        color: white;
+        border: 7px solid #e9ecef;
+        border-radius: 100%;
+        background-color: var(--palestine-green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .timeline-image h4 {
+        font-size: 1rem;
+        margin-top: 0;
+        line-height: 1.2;
+      }
+
+      .timeline-inverted {
+        margin-top: -15px;
+      }
+
+      /* Partner section */
+      .partners-section {
+        background-color: #f8f9fa;
+        padding: 5rem 0;
+      }
+
+      .partner-logo {
+        height: 80px;
+        opacity: 0.8;
+        filter: grayscale(100%);
+        transition: all 0.3s ease;
+      }
+
+      .partner-logo:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("/api/placeholder/1200/400") center/cover no-repeat;
+        color: white;
+        padding: 5rem 0;
+      }
+
+      .btn-donasi-glow {
+        background-color: var(--palestine-green);
+        color: white;
+        border: none;
+        font-weight: 600;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 150, 57, 0.6);
+      }
+
+      .btn-donasi-glow:hover {
+        background-color: var(--palestine-red);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px rgba(239, 51, 64, 0.7);
+      }
+
+      /* Footer */
+      footer {
+        background-color: #212529;
+        color: white;
+        padding: 3rem 0 1rem;
+      }
+
+      .footer-title {
+        position: relative;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--palestine-green);
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        margin-right: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background-color: var(--palestine-green);
+        transform: translateY(-3px);
+      }
+
+      .footer-links li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-links a {
+        color: #adb5bd;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .about-img {
+        max-width: 70%;
+        height: auto;
+        border-radius: 15px;
+      }
+
+      .img-container {
+        text-align: center; /* Memastikan gambar dan caption ada di tengah */
+      }
+
+      .caption p {
+        font-style: italic; /* Membuat teks caption miring */
+        color: #333; /* Sesuaikan warna teks caption */
+        margin-top: 1rem; /* Memberi jarak antara gambar dan caption */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .timeline:before {
+          left: 90px;
+        }
+
+        .timeline-panel {
+          width: calc(100% - 200px);
+          float: right;
+        }
+
+        .timeline-image {
+          left: 90px;
+          margin-left: 0;
+          margin-bottom: 0;
+        }
+
+        .timeline-inverted .timeline-panel {
+          float: right;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .page-header {
+          padding: 6rem 0 3rem;
+        }
+
+        .timeline:before {
+          left: 60px;
+        }
+
+        .timeline-image {
+          width: 60px;
+          height: 60px;
+          left: 60px;
+          margin-left: 0;
+          margin-bottom: 0;
+        }
+
+        .timeline-image h4 {
+          font-size: 0.8rem;
+        }
+
+        .timeline-panel {
+          width: calc(100% - 150px);
+          float: right;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .timeline:before {
+          left: 40px;
+        }
+
+        .timeline-image {
+          width: 50px;
+          height: 50px;
+          left: 40px;
+        }
+
+        .timeline-panel {
+          width: calc(100% - 120px);
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <span style="color: white">Donasi</span>
+          <span style="color: var(--palestine-green)">Ber</span>
+          <span style="color: var(--palestine-red)">sa</span>
+          <span style="color: var(--palestine-black)">ma</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+            alt="Bendera Palestina"
+            class="flag-icon"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Tentang</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Kontak</a>
+            </li>
+            <!-- Menu Dropdown Button -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More Options
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="about.html">Tentang Kami</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="article.html">Artikel</a>
+                </li>
+                <li><a class="dropdown-item" href="donasi.html">donasi</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="sign.html" class="btn btn-donasi">Sign-Up</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Page Header -->
+    <header class="page-header text-center">
+      <div class="container">
+        <h1 class="page-title display-4 fw-bold">Tentang Kami</h1>
+        <p class="lead mt-4">
+          Mengenal lebih dekat Donasi Bersama - Platform donasi untuk
+          <span class="palestina-text">Palestina</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+            alt="Bendera Palestina"
+            class="flag-icon"
+          />
+        </p>
+      </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section class="founder-section mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h2 class="section-title fw-bold">Kisah Pendiri</h2>
+            <p class="founder-paragraph">
+              Donasi Bersama didirikan oleh M. Ghalib Assiddiq Gusri, seorang
+              front-end developer enthusiast yang memiliki pengalaman di dunia
+              teknologi dan pengembangan perangkat lunak. Ghalib berkomitmen
+              untuk menghadirkan solusi digital yang bermanfaat bagi masyarakat
+              melalui platform donasi ini.
+            </p>
+            <p class="founder-paragraph">
+              Sebelumnya, Ghalib adalah staff Ristek PTI HIMSI Fasilkom UNSRI
+              untuk periode 2024-2025. Dalam perjalanan karirnya, ia juga pernah
+              mengikuti kelas pengembangan front-end di Dicoding untuk
+              meningkatkan keterampilannya dalam menciptakan antarmuka pengguna
+              yang efektif dan menarik.
+            </p>
+            <p class="founder-paragraph">
+              Dengan latar belakang tersebut, Ghalib bertekad untuk
+              mengembangkan Donasi Bersama sebagai platform yang aman,
+              transparan, dan efisien untuk membantu saudara-saudari kita di
+              Palestina, serta memperluas jangkauan bantuan kemanusiaan global.
+            </p>
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center">
+            <div class="img-container">
+              <img
+                src="img/loll.jpg"
+                alt="M. Ghalib Assiddiq Gusri"
+                class="img-fluid about-img"
+              />
+              <div class="caption">
+                <p class="font-italic">Web Dev Enthusiast - Project Manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Vision & Mission -->
+    <section class="bg-light py-5">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold section-title">Visi & Misi</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-5 mb-4">
+            <div class="value-card bg-white text-center">
+              <i class="bi bi-eye value-icon"></i>
+              <h3 class="fw-bold mb-3">Visi</h3>
+              <p>
+                Mewujudkan dunia yang lebih adil dan berkemanusiaan di mana
+                hak-hak dasar setiap orang dihormati, termasuk rakyat Palestina
+                untuk hidup dengan bermartabat dan damai.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-5 mb-4">
+            <div class="value-card bg-white text-center">
+              <i class="bi bi-bullseye value-icon"></i>
+              <h3 class="fw-bold mb-3">Misi</h3>
+              <p>
+                Membangun gerakan solidaritas global yang efektif dan
+                berkelanjutan untuk Palestina melalui platform donasi
+                transparan, edukasi publik, dan kolaborasi dengan mitra lokal
+                yang terpercaya.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-5">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold section-title">Nilai-Nilai Kami</h2>
+          <p class="text-muted">Prinsip yang mendasari setiap langkah kami</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="value-card bg-white">
+              <i class="bi bi-heart-fill value-icon"></i>
+              <h4 class="fw-bold mb-3">Kemanusiaan</h4>
+              <p>
+                Kami percaya bahwa setiap manusia memiliki hak yang sama untuk
+                hidup dengan bermartabat dan mendapatkan bantuan saat
+                dibutuhkan, tanpa diskriminasi.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="value-card bg-white">
+              <i class="bi bi-clipboard-check value-icon"></i>
+              <h4 class="fw-bold mb-3">Transparansi</h4>
+              <p>
+                Kami berkomitmen untuk mengelola donasi dengan integritas penuh
+                dan menyediakan informasi yang jelas tentang penggunaan dana
+                kepada publik dan donatur.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="value-card bg-white">
+              <i class="bi bi-people-fill value-icon"></i>
+              <h4 class="fw-bold mb-3">Solidaritas</h4>
+              <p>
+                Kami mengedepankan semangat kebersamaan dan dukungan yang
+                melampaui batas geografis, budaya, dan politik untuk mewujudkan
+                keadilan bagi Palestina.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="value-card bg-white">
+              <i class="bi bi-arrows-angle-expand value-icon"></i>
+              <h4 class="fw-bold mb-3">Keberlanjutan</h4>
+              <p>
+                Kami merancang program bantuan yang tidak hanya mengatasi
+                kebutuhan darurat, tetapi juga membangun fondasi untuk masa
+                depan yang lebih baik bagi masyarakat Palestina.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="value-card bg-white">
+              <i class="bi bi-hand-thumbs-up value-icon"></i>
+              <h4 class="fw-bold mb-3">Akuntabilitas</h4>
+              <p>
+                Kami memastikan setiap donasi digunakan secara efektif dan
+                bertanggung jawab melalui sistem pelaporan yang komprehensif dan
+                audit independen.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="value-card bg-white">
+              <i class="bi bi-lightbulb value-icon"></i>
+              <h4 class="fw-bold mb-3">Inovasi</h4>
+              <p>
+                Kami terus mencari cara-cara baru dan efektif untuk memberikan
+                bantuan dan memperluas dampak positif bagi masyarakat Palestina
+                di tengah segala keterbatasan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Impact -->
+    <section class="bg-light py-5">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold section-title">Dampak Kami</h2>
+          <p class="text-muted">Apa yang telah kami capai bersama</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 col-6 text-center mb-4">
+            <div class="milestone-number">1,000+</div>
+            <p>Donatur Aktif</p>
+          </div>
+          <div class="col-md-3 col-6 text-center mb-4">
+            <div class="milestone-number">Rp2M+</div>
+            <p>Dana Terkumpul</p>
+          </div>
+          <div class="col-md-3 col-6 text-center mb-4">
+            <div class="milestone-number">15+</div>
+            <p>Mitra Lokal</p>
+          </div>
+          <div class="col-md-3 col-6 text-center mb-4">
+            <div class="milestone-number">50+</div>
+            <p>Proyek Bantuan</p>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h4 class="fw-bold mb-3">Bantuan Kesehatan</h4>
+                <p>
+                  Kami telah menyalurkan obat-obatan dan peralatan medis senilai
+                  lebih dari Rp500 juta ke rumah sakit dan klinik di Gaza dan
+                  Tepi Barat. Bantuan ini telah membantu perawatan lebih dari
+                  5.000 pasien di tengah keterbatasan fasilitas kesehatan.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h4 class="fw-bold mb-3">Pendidikan Anak</h4>
+                <p>
+                  Program beasiswa dan bantuan pendidikan kami telah mendukung
+                  lebih dari 300 anak Palestina untuk tetap bersekolah. Kami
+                  juga membangun 3 pusat belajar di kamp pengungsi yang melayani
+                  ratusan anak setiap harinya.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h4 class="fw-bold mb-3">Bantuan Pangan</h4>
+                <p>
+                  Sejak 2020, kami telah mendistribusikan lebih dari 10.000
+                  paket makanan darurat yang mencukupi kebutuhan lebih dari
+                  2.500 keluarga di Gaza. Bantuan ini sangat penting di tengah
+                  krisis ekonomi dan blokade yang berkelanjutan.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h4 class="fw-bold mb-3">Air Bersih</h4>
+                <p>
+                  Proyek penyediaan air bersih kami telah membangun 5 unit
+                  penyulingan air dan memperbaiki infrastruktur air di 7
+                  komunitas, memberikan akses air bersih kepada lebih dari
+                  30.000 orang di Gaza.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Journey -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-title">Tentang Donasi Bersama</h4>
+            <p>
+              Platform donasi transparan yang berfokus pada bantuan kemanusiaan
+              untuk Palestina. Kami bekerja sama dengan organisasi terpercaya
+              untuk memastikan donasi Anda sampai ke tangan yang membutuhkan.
+            </p>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.instagram.com/ghalib.ag/"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/m-ghalib-a-g-469a9330a/"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-title">Tautan Cepat</h4>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="bi bi-chevron-right"></i> Beranda</a
+                >
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="bi bi-chevron-right"></i> Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="campaign.html"
+                  ><i class="bi bi-chevron-right"></i> Kampanye</a
+                >
+              </li>
+              <li>
+                <a href="donasi.html"
+                  ><i class="bi bi-chevron-right"></i> Donasi</a
+                >
+              </li>
+              <li>
+                <a href="article.html"
+                  ><i class="bi bi-chevron-right"></i> Artikel</a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="bi bi-chevron-right"></i> Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h4 class="footer-title">Hubungi Kami</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="bi bi-geo-alt me-2"></i> Jl. Merdeka No. 123, Jakarta
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-telephone me-2"></i> +62 123 4567 890
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope me-2"></i> info@donasibersama.id
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200, // Durasi efek fade-in
+        easing: "ease-in-out", // Jenis transisi
+      });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation Portal Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/loginsign.css" />
+    <style>
+      :root {
+        --palestine-red: #ef3340;
+        --palestine-green: #009639;
+        --palestine-black: #000000;
+        --palestine-white: #ffffff;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+        background-color: #f8f9fa;
+      }
+
+      .page-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Flag stripe */
+
+      /* Card styling */
+      .card {
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
+
+      .card-header {
+        background: linear-gradient(
+          135deg,
+          var(--palestine-green) 0%,
+          #00b347 100%
+        );
+        color: white;
+        border-bottom: none;
+        padding: 1.5rem;
+        position: relative;
+      }
+
+      .header-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.09'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      .flag-indicator {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+      }
+
+      .flag-indicator span {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-left: 3px;
+        border-radius: 1px;
+      }
+
+      .flag-indicator span:nth-child(1) {
+        background-color: var(--palestine-black);
+      }
+      .flag-indicator span:nth-child(2) {
+        background-color: var(--palestine-green);
+      }
+      .flag-indicator span:nth-child(3) {
+        background-color: var(--palestine-white);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .flag-indicator span:nth-child(4) {
+        background-color: var(--palestine-red);
+      }
+
+      /* Form controls */
+      .form-control {
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #dee2e6;
+      }
+
+      .form-control:focus {
+        border-color: var(--palestine-green);
+        box-shadow: 0 0 0 0.25rem rgba(0, 150, 57, 0.25);
+      }
+
+      .form-label {
+        font-weight: 500;
+        color: #495057;
+      }
+
+      .input-group-text {
+        background-color: #f8f9fa;
+        border-right: none;
+      }
+
+      .form-control.with-icon {
+        border-left: none;
+      }
+
+      /* Button styling */
+      .btn-palestine {
+        background-color: var(--palestine-green);
+        border-color: var(--palestine-green);
+        color: white;
+        border-radius: 50rem;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 10px rgba(0, 150, 57, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-palestine:hover {
+        background-color: #008532;
+        border-color: #008532;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 150, 57, 0.4);
+      }
+
+      .btn-palestine:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 8px rgba(0, 150, 57, 0.3);
+      }
+
+      /* Donation counter */
+      .donation-stats {
+        background-color: rgba(0, 150, 57, 0.1);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 1rem;
+      }
+
+      .donation-count {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--palestine-green);
+      }
+
+      /* Link styling */
+      .link-palestine {
+        color: var(--palestine-green);
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .link-palestine:hover {
+        color: #007530;
+        text-decoration: underline;
+      }
+
+      /* Progress bar */
+      .progress {
+        height: 8px;
+        background-color: #e9ecef;
+        border-radius: 1rem;
+        margin: 0.5rem 0;
+      }
+
+      .progress-bar {
+        background-color: var(--palestine-green);
+        border-radius: 1rem;
+      }
+
+      /* Animation */
+      .animate-in {
+        animation: fadeIn 0.5s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="animate-in">
+    <div class="flag-stripe"></div>
+
+    <div class="page-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-7 col-sm-10">
+            <div class="card shadow">
+              <!-- Card Header -->
+              <div class="card-header text-center py-4">
+                <div class="header-pattern"></div>
+                <div class="flag-indicator">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <h4 class="fw-bold mb-0 position-relative">
+                  Support Our Cause
+                </h4>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body p-4">
+                <h5 class="text-center mb-4">Welcome Back</h5>
+
+                <form id="loginForm">
+                  <!-- Email Input -->
+                  <div class="mb-3">
+                    <label for="loginEmail" class="form-label"
+                      >Email address</label
+                    >
+                    <div class="input-group">
+                      <span class="input-group-text">
+                        <i class="bi bi-envelope"></i>
+                      </span>
+                      <input
+                        type="email"
+                        class="form-control with-icon"
+                        id="loginEmail"
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Password Input -->
+                  <div class="mb-4">
+                    <label for="loginPassword" class="form-label"
+                      >Password</label
+                    >
+                    <div class="input-group">
+                      <span class="input-group-text">
+                        <i class="bi bi-lock"></i>
+                      </span>
+                      <input
+                        type="password"
+                        class="form-control with-icon"
+                        id="loginPassword"
+                        placeholder="••••••••"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Remember me & Forgot Password -->
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-4"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="rememberMe"
+                      />
+                      <label class="form-check-label small" for="rememberMe">
+                        Remember me
+                      </label>
+                    </div>
+                    <a href="#" class="link-palestine small"
+                      >Forgot password?</a
+                    >
+                  </div>
+
+                  <!-- Login Button -->
+                  <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-palestine">
+                      <i class="bi bi-box-arrow-in-right me-2"></i
+                      ><a href="index.html">Sign In to Donate</a>
+                    </button>
+                  </div>
+
+                  <!-- Register Link -->
+                  <div class="text-center mt-4">
+                    <span class="text-muted small">Don't have an account?</span>
+                    <a href="sign.html" class="link-palestine small ms-1"
+                      >Register now</a
+                    >
+                  </div>
+
+                  <!-- Donation Stats -->
+                  <div class="donation-stats text-center mt-4">
+                    <p class="small mb-1">
+                      Join <span class="donation-count">5,842</span> donors who
+                      made a difference
+                    </p>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 78%"
+                      ></div>
+                    </div>
+                    <p class="small text-muted mt-2">
+                      78% of our monthly goal reached
+                    </p>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Card Footer -->
+              <div class="card-footer text-center py-3 bg-light">
+                <small class="text-muted"
+                  >100% of donations go directly to humanitarian aid</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Donasi Bersama - Platform Donasi untuk Palestina"
+    />
+
+    <title>Donasi Bersama</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <span style="color: white">Donasi</span>
+          <span style="color: var(--palestine-green)">Ber</span>
+          <span style="color: var(--palestine-red)">sa</span>
+          <span style="color: var(--palestine-black)">ma</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+            alt="Bendera Palestina"
+            class="flag-icon"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Kontak</a>
+            </li>
+            <!-- Menu Dropdown Button -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More Options
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="about.html">Tentang Kami</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="article.html">Artikel</a>
+                </li>
+                <li><a class="dropdown-item" href="donasi.html">Donasi</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="ms-auto">
+            <a href="sign.html" class="btn btn-link nav-profile-icon">
+              <i class="bi bi-person-circle fs-4 text-white"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container text-center">
+        <div class="hero-content" data-aos="fade-up">
+          <h1 class="display-4 fw-bold mb-4 text-white">
+            Together, We Can Make a Difference
+          </h1>
+          <p class="lead mb-4 text-white">
+            Reach out your hand today and become part of the hope for
+            <span class="palestina-highlight">Palestine</span>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+              alt="Palestinian Flag"
+              class="flag-icon"
+            />
+          </p>
+
+          <div class="d-flex justify-content-center gap-3 mt-5 flex-wrap">
+            <a href="donasi.html" class="btn btn-donasi-glow px-4 py-3 fs-5"
+              >Donasi Sekarang</a
+            >
+            <a href="#tentang" class="btn btn-outline-light px-4 py-3 fs-5"
+              >Pelajari Lebih Lanjut</a
+            >
+          </div>
+
+          <div class="mt-4">
+            <small class="text-light">
+              Every second
+              <span style="color: var(--palestine-red)">counts</span>. Take
+              action now.
+            </small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+      <div class="container text-center" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-3 col-6 mb-4 mb-md-0">
+            <div class="stat-number" data-count="1000">1,000+</div>
+            <p>Donatur</p>
+          </div>
+          <div class="col-md-3 col-6 mb-4 mb-md-0">
+            <div class="stat-number" data-count="5">5+</div>
+            <p>Tahun Pengalaman</p>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-number" data-count="20">Rp2M+</div>
+            <p>Dana Terkumpul</p>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-number" data-count="15">15+</div>
+            <p>Mitra Terpercaya</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Campaign Section -->
+    <section id="tentang" class="py-5" data-aos="fade-up">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <img
+              src="img/foto-campaign.jpg"
+              class="img-fluid campaign-img w-100"
+              alt="Campaign Image"
+            />
+          </div>
+
+          <div class="col-lg-6">
+            <h2 class="fw-bold mb-4 about-title">
+              Why We Campaign for <span class="palestina-text">Palestine</span>
+            </h2>
+            <p class="about-paragraph">
+              In a world filled with injustice, silence is not an option. Our
+              campaign is a voice for the voiceless in Palestine, bringing hope
+              and essential aid to those who need it most.
+            </p>
+            <p class="about-paragraph">
+              With each donation, you're not just giving — you're standing in
+              solidarity, offering hope, and fueling real change. Your
+              contribution makes a tangible difference in the lives of
+              Palestinians affected by ongoing conflict.
+            </p>
+            <p class="about-paragraph">
+              We work with trusted local partners to ensure your donations reach
+              those in need, providing medical supplies, food, clean water, and
+              educational resources.
+            </p>
+            <div class="mt-4">
+              <a href="article.html" class="btn btn-outline-success me-2"
+                >Read Articles</a
+              >
+              <a href="donasi.html" class="btn btn-success">Donate Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="kampanye" class="py-5 bg-light">
+      <div class="container py-5" data-aos="fade-up">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Your Donation, Their Hope — Why It Counts</h2>
+          <p class="text-muted">Three reasons why your contribution matters</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card card p-4 text-center h-100">
+              <div class="card-body">
+                <i
+                  class="bi bi-heart-fill feature-icon"
+                  style="color: var(--palestine-red)"
+                ></i>
+                <h4 class="mb-3">Immediate Impact</h4>
+                <p class="card-text">
+                  Your donation directly supports urgent humanitarian needs
+                  including medical care, food, and shelter for Palestinian
+                  families.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="feature-card card p-4 text-center h-100">
+              <div class="card-body">
+                <i
+                  class="bi bi-shield-check feature-icon"
+                  style="color: var(--palestine-green)"
+                ></i>
+                <h4 class="mb-3">Transparent & Trustworthy</h4>
+                <p class="card-text">
+                  We partner with accredited organizations and provide regular
+                  updates on how funds are distributed and used on the ground.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="feature-card card p-4 text-center h-100">
+              <div class="card-body">
+                <i
+                  class="bi bi-globe feature-icon"
+                  style="color: var(--palestine-black)"
+                ></i>
+                <h4 class="mb-3">Global Solidarity</h4>
+                <p class="card-text">
+                  Join thousands worldwide standing in solidarity with
+                  Palestine, making a statement that humanity transcends
+                  borders.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campaign Carousel -->
+    <section id="galeri" class="carousel-section py-5">
+      <div class="container py-5" data-aos="fade-up">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Our Impact in Images</h2>
+          <p class="text-muted">See how your donations make a difference</p>
+        </div>
+
+        <div
+          id="campaignCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#campaignCarousel"
+              data-bs-slide-to="0"
+              class="active"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#campaignCarousel"
+              data-bs-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#campaignCarousel"
+              data-bs-slide-to="2"
+            ></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="img/foto-campaign.jpg"
+                class="d-block w-100"
+                alt="Aid Distribution"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Medical Aid Distribution</h5>
+                <p>
+                  Delivering essential medical supplies to hospitals in Gaza
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="img/main-photo.jpg"
+                class="d-block w-100"
+                alt="Children Support"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Supporting Children's Education</h5>
+                <p>
+                  Providing educational resources to maintain learning
+                  continuity
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="img/joseph-lockley-_cx3KvYB99s-unsplash.jpg"
+                class="d-block w-100"
+                alt="Food Packages"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Food Security Programs</h5>
+                <p>Distributing food packages to families in need</p>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#campaignCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#campaignCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container text-center py-5">
+        <h2 class="display-5 fw-bold mb-4">
+          Siap Menjadi Bagian dari Perubahan?
+        </h2>
+        <p class="lead mb-4">
+          Setiap donasi Anda membawa harapan dan dukungan nyata bagi
+          saudara-saudari kita di Palestina.
+        </p>
+        <a href="donasi.html" class="btn btn-donasi-glow btn-lg px-5 py-3 mt-3">
+          Donasi Sekarang
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-title">Tentang Donasi Bersama</h4>
+            <p>
+              Platform donasi transparan yang berfokus pada bantuan kemanusiaan
+              untuk Palestina. Kami bekerja sama dengan organisasi terpercaya
+              untuk memastikan donasi Anda sampai ke tangan yang membutuhkan.
+            </p>
+            <div class="social-icons mt-3">
+              <a href="https://www.facebook.com/?locale=id_ID"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="https://x.com/"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.instagram.com/ghalib.ag/"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/m-aqiful-hadi-b06158321/?originalSubdomain=id"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-title">Tautan Cepat</h4>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="bi bi-chevron-right"></i> Beranda</a
+                >
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="bi bi-chevron-right"></i> Tentang Kami</a
+                >
+              </li>
+
+              <li>
+                <a href="donasi.html"
+                  ><i class="bi bi-chevron-right"></i> Donasi</a
+                >
+              </li>
+              <li>
+                <a href="article.html"
+                  ><i class="bi bi-chevron-right"></i> Artikel</a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="bi bi-chevron-right"></i> Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h4 class="footer-title">Hubungi Kami</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="bi bi-geo-alt me-2"></i> Jl. Merdeka No. 123, Jakarta
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-telephone me-2"></i> +62 123 4567 890
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope me-2"></i> info@donasibersama.id
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200, // Durasi efek fade-in
+        easing: "ease-in-out", // Jenis transisi
+      });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

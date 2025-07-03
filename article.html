@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Palestine: History, Humanity, and Hope</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        color: #212529;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+      }
+      .hero {
+        background-color: #0d1b2a;
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .content {
+        padding: 50px 20px;
+        max-width: 850px;
+        margin: auto;
+      }
+      .intro-paragraph {
+        font-size: 1.25rem;
+        color: #495057;
+        border-left: 4px solid #001f3f;
+        padding-left: 20px;
+        margin-bottom: 30px;
+      }
+      .section-title {
+        color: #001f3f;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .timeline {
+        position: relative;
+        margin: 40px 0;
+        padding: 20px 0;
+      }
+      .timeline-item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 25px;
+      }
+      .timeline-item:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #001f3f;
+      }
+      .timeline-date {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #001f3f;
+      }
+      .card {
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      .card-img-top {
+        height: 300px;
+        object-fit: cover;
+      }
+      .quote-box {
+        background-color: #e9ecef;
+        border-left: 5px solid #001f3f;
+        padding: 20px;
+        margin: 30px 0;
+        font-style: italic;
+      }
+      .quote-source {
+        display: block;
+        text-align: right;
+        font-weight: 600;
+        font-style: normal;
+        margin-top: 10px;
+      }
+      .key-facts {
+        background-color: #f1f3f5;
+        padding: 25px;
+        border-radius: 8px;
+        margin: 30px 0;
+      }
+      .key-facts h4 {
+        color: #001f3f;
+        margin-bottom: 15px;
+      }
+      .key-facts ul {
+        padding-left: 20px;
+      }
+      .key-facts li {
+        margin-bottom: 10px;
+      }
+      .donate-cta {
+        background-color: #001f3f;
+        color: white;
+        padding: 50px 30px;
+        text-align: center;
+        margin-top: 60px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+      .donate-cta h2 {
+        margin-bottom: 25px;
+        font-size: 2.2rem;
+      }
+      .donate-cta p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 25px;
+      }
+      .btn-donate {
+        background-color: #dc3545;
+        color: white;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s ease;
+      }
+      .btn-donate:hover {
+        background-color: #c82333;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .footer-note {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-top: 40px;
+        text-align: center;
+      }
+      .aid-programs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 30px 0;
+      }
+      .aid-item {
+        flex: 1 1 250px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+      .aid-item h5 {
+        color: #001f3f;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <span style="color: white">Donasi</span>
+          <span style="color: var(--palestine-green)">Ber</span>
+          <span style="color: var(--palestine-red)">sa</span>
+          <span style="color: var(--palestine-black)">ma</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+            alt="Bendera Palestina"
+            class="flag-icon"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Tentang</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Kontak</a>
+            </li>
+            <!-- Menu Dropdown Button -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More Options
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="about.html">Tentang Kami</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="article.html">Artikel</a>
+                </li>
+                <li><a class="dropdown-item" href="donasi.html">donasi</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="sign.html" class="btn btn-donasi">Sign-Up</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero">
+      <div class="container">
+        <h1>Understanding Palestine: History, Humanity, and Hope</h1>
+        <p>
+          Exploring the complex history, daily realities, and aspirations of a
+          people and region at the center of global attention
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      <p class="intro-paragraph">
+        Few global topics evoke such intense emotion and diverse perspectives as
+        the Palestinian situation. Behind the headlines and political rhetoric
+        lies a deeply human story of resilience, cultural heritage, and a
+        complex historical journey spanning generations.
+      </p>
+
+      <h2 class="section-title">
+        Historical Context: Understanding the Foundations
+      </h2>
+      <p>
+        The modern Palestinian narrative is shaped by decades of historical
+        events and geopolitical shifts. What we witness today is the result of a
+        complex tapestry of historical developments that have dramatically
+        altered the landscape of the region.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Pre-1948</div>
+          <p>
+            The region, then part of the Ottoman Empire and later under British
+            Mandate, was home to diverse communities of Muslims, Christians, and
+            Jews. Palestinian Arab identity was already forming through shared
+            language, culture, and connection to the land.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">1948-1967</div>
+          <p>
+            The establishment of Israel and the subsequent first Arab-Israeli
+            war led to what Palestinians refer to as "Al-Nakba" (The
+            Catastrophe), resulting in displacement of hundreds of thousands of
+            Palestinians. The Gaza Strip came under Egyptian administration
+            while the West Bank was annexed by Jordan.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">1967-1993</div>
+          <p>
+            Following the Six-Day War, Israel gained control of the Gaza Strip,
+            West Bank, East Jerusalem, and other territories. Palestinian
+            national consciousness strengthened, and the PLO emerged as the
+            representative of Palestinian aspirations.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">1993-Present</div>
+          <p>
+            The Oslo Accords established limited Palestinian self-governance.
+            However, subsequent years have seen failed peace initiatives,
+            periods of violence, expansion of settlements, economic blockades,
+            and humanitarian challenges, alongside growing international
+            recognition of Palestinian statehood.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="section-title">Daily Realities: Life Beyond the Headlines</h2>
+      <p>
+        For the approximately 5.2 million Palestinians living in the Gaza Strip
+        and West Bank, daily life encompasses far more than what international
+        news typically portrays. Families face significant challenges in
+        accessing basic necessities while maintaining cultural traditions and
+        building community.
+      </p>
+
+      <div class="card mb-4">
+        <img
+          src="img/ali-kokab-xsrvjoJy0pQ-unsplash.jpg"
+          class="card-img-top"
+          alt="Daily life in Palestine"
+        />
+        <div class="card-body">
+          <h5 class="card-title">The Fabric of Daily Life</h5>
+          <p class="card-text">
+            Despite restrictions on movement, economic hardship, and periodic
+            conflict, Palestinian communities maintain vibrant cultural
+            traditions. Local markets bustle with activity, universities produce
+            graduates eager to contribute to society, and families celebrate
+            weddings, births, and holidays. These ordinary moments of joy
+            persist alongside extraordinary challenges.
+          </p>
+        </div>
+      </div>
+
+      <div class="key-facts">
+        <h4>Key Humanitarian Challenges</h4>
+        <ul>
+          <li>
+            <strong>Access to water:</strong> Many Palestinian communities face
+            severe water shortages, with average consumption well below WHO
+            recommended minimums.
+          </li>
+          <li>
+            <strong>Economic opportunity:</strong> Unemployment rates exceed 45%
+            in Gaza and 15% in the West Bank, with young graduates particularly
+            affected.
+          </li>
+          <li>
+            <strong>Healthcare:</strong> Medical facilities often lack essential
+            supplies and specialized equipment, while restrictions on movement
+            complicate access to care.
+          </li>
+          <li>
+            <strong>Education:</strong> Despite high literacy rates, schools
+            face overcrowding, infrastructure limitations, and periodic
+            disruptions.
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        These challenges exist alongside remarkable resilience. Palestinian
+        society has developed adaptive strategies to maintain education,
+        healthcare, and community support networks despite structural
+        limitations and periodic crises.
+      </p>
+
+      <div class="quote-box">
+        "What sustains us is not just hope for political resolution, but the
+        everyday acts of mutual support within our communities. When a family
+        loses their home, neighbors take them in. When hospitals lack supplies,
+        people organize donations. This solidarity is the backbone of our
+        survival."
+        <span class="quote-source"
+          >— Layla Hamdan, community organizer in Ramallah</span
+        >
+      </div>
+
+      <h2 class="section-title">Cultural Heritage and Identity</h2>
+      <p>
+        Palestinian identity is embedded in rich cultural traditions that have
+        been maintained despite displacement and disruption. From distinctive
+        embroidery patterns that identify specific villages, to culinary
+        traditions like maqlouba and knafeh, to dabke dance celebrations,
+        cultural practices serve as powerful vehicles for preserving collective
+        memory and identity.
+      </p>
+
+      <p>
+        The arts play a crucial role in Palestinian expression, with poets like
+        Mahmoud Darwish achieving international recognition for work exploring
+        themes of homeland, exile, and belonging. Contemporary Palestinian
+        cinema, music, and visual arts continue this tradition of creative
+        expression while engaging with modern realities.
+      </p>
+
+      <h2 class="section-title">International Engagement: Varied Approaches</h2>
+      <p>
+        The international community's engagement with Palestine reflects diverse
+        perspectives and approaches. Diplomatic efforts have focused on the
+        two-state solution framework, though implementation has proven elusive.
+        Meanwhile, humanitarian organizations work to address immediate needs
+        while advocating for sustainable development.
+      </p>
+
+      <h3 class="section-title">Humanitarian Support Programs</h3>
+      <div class="aid-programs">
+        <div class="aid-item">
+          <h5>Emergency Relief</h5>
+          <p>
+            Providing food packages, temporary shelter, and medical supplies
+            during crisis situations. These efforts serve as crucial lifelines
+            during periods of acute need.
+          </p>
+        </div>
+        <div class="aid-item">
+          <h5>Healthcare Development</h5>
+          <p>
+            Supporting local hospitals and clinics with equipment, training
+            programs for medical professionals, and specialized treatment
+            options for complex conditions.
+          </p>
+        </div>
+        <div class="aid-item">
+          <h5>Education Initiatives</h5>
+          <p>
+            Funding scholarship programs, school construction, and educational
+            resources to ensure continuity of learning despite disruptions.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        Effective support requires understanding the complex interplay of
+        humanitarian needs and long-term development goals. Organizations
+        working in Palestine increasingly emphasize local leadership and
+        sustainable approaches that respect Palestinian agency in shaping their
+        own future.
+      </p>
+
+      <h2 class="section-title">Voices for Peace</h2>
+      <p>
+        Amid the challenging circumstances, numerous grassroots initiatives
+        within Palestinian and Israeli society work toward dialogue, mutual
+        understanding, and peaceful coexistence. Organizations bringing together
+        youth from different backgrounds create spaces for human connection that
+        transcend political divisions.
+      </p>
+
+      <p>
+        These initiatives remind us that beyond geopolitical complexities lie
+        human beings with shared hopes for security, dignity, and opportunity.
+        While political solutions remain elusive, these people-to-people
+        connections maintain crucial pathways toward eventual reconciliation.
+      </p>
+
+      <div class="quote-box">
+        "Peace is not just about agreements between governments, but about
+        creating networks of human relationships strong enough to withstand the
+        forces of division. This work happens one conversation, one project, one
+        friendship at a time."
+        <span class="quote-source"
+          >— Joint statement from Parents Circle-Families Forum, a group of
+          Palestinian and Israeli families who have lost loved ones to the
+          conflict</span
+        >
+      </div>
+
+      <h2 class="section-title">Looking Forward</h2>
+      <p>
+        The path forward for Palestine involves complex questions of
+        sovereignty, security, economic development, and human rights. While
+        political solutions remain contested, what's clear is the need for
+        approaches that recognize the humanity and dignity of all people in the
+        region.
+      </p>
+
+      <p>
+        Supporting Palestine means advocating for fundamental principles: that
+        all children deserve safety and opportunity; that all communities
+        deserve self-determination and cultural expression; and that sustainable
+        peace requires addressing root causes of suffering while building
+        bridges of understanding.
+      </p>
+
+      <p class="text-muted mt-4">
+        Written by <strong>Ghalib</strong> | Updated May 2025 |
+        <em
+          >With contributions from regional specialists and community voices</em
+        >
+      </p>
+
+      <div class="donate-cta">
+        <h2>Support Humanitarian Initiatives</h2>
+        <p>
+          Your contribution can help fund critical programs providing emergency
+          relief, medical care, education support, and community development in
+          Palestinian communities. Each donation directly impacts lives and
+          sustains hope.
+        </p>
+        <div class="mt-4">
+          <a href="index.html" class="btn btn-light me-3"
+            >← Return to Homepage</a
+          >
+          <a href="#donate-section" class="btn btn-donate">Make a Donation</a>
+        </div>
+        <small class="d-block mt-3 text-light opacity-75"
+          >All donations are transparently tracked and regular impact reports
+          are published on our website.</small
+        >
+      </div>
+
+      <p class="footer-note">
+        This article aims to provide context and human perspective on a complex
+        situation. It does not claim to represent all viewpoints or address
+        every aspect of this multifaceted topic. We encourage readers to explore
+        diverse sources and engage respectfully with different perspectives.
+      </p>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-title">Tentang Donasi Bersama</h4>
+            <p>
+              Platform donasi transparan yang berfokus pada bantuan kemanusiaan
+              untuk Palestina. Kami bekerja sama dengan organisasi terpercaya
+              untuk memastikan donasi Anda sampai ke tangan yang membutuhkan.
+            </p>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.instagram.com/ghalib.ag/"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/m-ghalib-a-g-469a9330a/"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="footer-title">Tautan Cepat</h4>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="bi bi-chevron-right"></i> Beranda</a
+                >
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="bi bi-chevron-right"></i> Tentang Kami</a
+                >
+              </li>
+
+              <li>
+                <a href="donasi.html"
+                  ><i class="bi bi-chevron-right"></i> Donasi</a
+                >
+              </li>
+              <li>
+                <a href="article.html"
+                  ><i class="bi bi-chevron-right"></i> Artikel</a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="bi bi-chevron-right"></i> Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h4 class="footer-title">Hubungi Kami</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="bi bi-geo-alt me-2"></i> Jl. Merdeka No. 123, Jakarta
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-telephone me-2"></i> +62 123 4567 890
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-envelope me-2"></i> info@donasibersama.id
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
