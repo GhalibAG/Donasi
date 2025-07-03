@@ -1,0 +1,32 @@
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(to right, var(--palestine-black), var(--palestine-green)); /* Black to Green gradient */
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, var(--palestine-black), var(--palestine-green)); /* Same gradient for container */
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  background: #ffffff; /* Keep card background white for contrast */
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--palestine-green) 0%, #00b347 100%);
+  color: white;
+  border-bottom: none;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.card-body {
+  padding: 2rem;
+}

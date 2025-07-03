@@ -1,0 +1,258 @@
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(to right, var(--palestine-black), var(--palestine-green)); /* Black to Green gradient */
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, var(--palestine-black), var(--palestine-green)); /* Same gradient for container */
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  background: #ffffff; /* Keep card background white for contrast */
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--palestine-green) 0%, #00b347 100%);
+  color: white;
+  border-bottom: none;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+/* contact-style.css */
+
+:root {
+  --primary-color: #009639;
+  --primary-dark: #007e30;
+  --primary-light: rgba(0, 150, 57, 0.1);
+  --accent-color: #ef3340;
+  --text-dark: #2d3436;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --border-color: #e0e0e0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23009639' fill-opacity='0.05'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 20.83l2.83-2.83 1.41 1.41L1.41 22H0v-1.17zM0 3.07l2.83-2.83 1.41 1.41L1.41 4.24H0V3.07zM17.76 40l2.83-2.83 1.41 1.41L19.17 40h-1.41zM35.52 40l2.83-2.83 1.41 1.41L36.93 40h-1.41zM3.07 40l2.83-2.83 1.41 1.41L4.48 40H3.07zM20.83 40l2.83-2.83 1.41 1.41L22.24 40h-1.41zM38.59 40l2.83-2.83 1.41 1.41L40 40h-1.41zM20.83 22.83l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41zM3.07 22.83l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41zM38.59 22.83l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41zM20.83 5.07l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41zM3.07 5.07l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41zM38.59 5.07l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Flag stripe */
+.flag-stripe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    #000000 33%,
+    var(--primary-color) 33%,
+    var(--primary-color) 66%,
+    var(--accent-color) 66%
+  );
+  z-index: 1050;
+}
+
+/* Card styling */
+.contact-card {
+  background-color: var(--white);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    #000000 33%,
+    var(--primary-color) 33%,
+    var(--primary-color) 66%,
+    var(--accent-color) 66%
+  );
+}
+
+.card-body {
+  padding: 2.5rem;
+}
+
+h2 {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Form styling */
+.form-label {
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(0, 150, 57, 0.25);
+}
+
+.input-group-text {
+  background-color: var(--primary-light);
+  border: 1px solid var(--border-color);
+  border-right: none;
+  color: var(--primary-color);
+}
+
+.form-control.with-icon {
+  border-left: none;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+/* Button styling */
+.btn-submit {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 150, 57, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 150, 57, 0.3);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 150, 57, 0.2);
+}
+
+/* Feature badges */
+.features-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.feature-badge {
+  text-align: center;
+  padding: 0.75rem;
+  flex: 1;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-light);
+  transition: all 0.3s ease;
+}
+
+.feature-badge:hover {
+  background-color: rgba(0, 150, 57, 0.15);
+  transform: translateY(-3px);
+}
+
+.feature-badge i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.feature-badge p {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Contact info section */
+.contact-info {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.contact-info i {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .features-section {
+    flex-wrap: wrap;
+  }
+  
+  .feature-badge {
+    flex: 0 0 30%;
+    margin-bottom: 0.75rem;
+  }
+  
+  .contact-info .col-md-4 {
+    margin-bottom: 1rem;
+  }
+}
